@@ -37,7 +37,7 @@ class IdeaController extends Controller
      */
     public function create()
     {
-        //
+        return "You want to create a new idea";
     }
 
     /**
@@ -71,7 +71,7 @@ class IdeaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "You want to edit $id!";
     }
 
     /**

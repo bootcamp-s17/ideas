@@ -4,10 +4,7 @@
 
 <div class="container" ng-app="app" ng-controller="Controller">
 
-
-  <button class="btn btn-success btn-xs" style="margin-bottom: 20px;" type="submit"><a href="/ideas/create">Add</a></button>
-
-  <div class="panel panel-default" ng-repeat="idea in ideas">
+  <div class="panel panel-default">
     <div class="panel-heading clearfix">
       <h3 class="panel-title pull-left">[[ idea.title ]]</h3>
       <form method="post" action="[[ idea.action ]]">
@@ -30,11 +27,7 @@
 <script>
   function Controller($scope, $location) {
 
-    $scope.ideas = {!! $ideas !!};
-
-    $scope.edit = function(id) {
-      $window.location.href('/ideas/' + id + '/edit');
-    };
+    $scope.idea = {!! $idea !!};
 
   }
   angular
