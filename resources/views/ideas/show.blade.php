@@ -12,7 +12,9 @@
         {{ method_field('DELETE')}}
         <button class="btn btn-danger btn-xs pull-right" type="submit">Delete</button>
       </form>
-      <button class="btn btn-warning btn-xs pull-right" style="margin-right: 10px;" XXXng-click="edit([[ idea.id ]])"><a href="/ideas/[[ idea.id ]]/edit">Edit</a></button>
+      <form method="get" action="[[ idea.action ]]">
+        <button style="margin-right: 10px;" class="btn btn-warning btn-xs pull-right" type="submit">Edit</button>
+      </form>
     </div>
     <div class="panel-body">
       [[ idea.content ]]

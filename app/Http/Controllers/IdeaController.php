@@ -37,7 +37,8 @@ class IdeaController extends Controller
      */
     public function create()
     {
-        return "You want to create a new idea";
+        $priorities = \App\Priority::all();
+        return view('ideas.create', compact('priorities'));
     }
 
     /**
@@ -48,7 +49,14 @@ class IdeaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $idea = new \App\Idea;
+        $idea['title'] = $request->title;
+        $idea['content'] = $request->content;
+        $idea['priority_id'] = $request->priority_id;
+        $idea['sort_order'] = 0;
+        $idea->save();
+
+        return redirect('/ideas');
     }
 
     /**
