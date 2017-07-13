@@ -24,6 +24,9 @@ class IdeaController extends Controller
     public function index()
     {
         $ideas = \App\Idea::all();
+        foreach ($ideas as $idea) {
+            $idea['action'] = '/ideas/' . $idea['id'];
+        }
         return view('ideas.index', compact('ideas'));
     }
 
@@ -91,6 +94,8 @@ class IdeaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $idea = \App\Idea::find($id);
+        $idea->delete();
+        return redirect('/ideas');
     }
 }
