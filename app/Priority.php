@@ -17,6 +17,6 @@ class Priority extends Model
     protected $dates = ['deleted_at'];
 
     public function ideas() {
-      $this->hasMany('\App\Idea');
+      return $this->hasMany('App\Idea');
     }
 }

@@ -17,7 +17,7 @@ class Idea extends Model
     protected $dates = ['deleted_at'];
 
     public function priority() {
-      $this->belongsTo('\App\Priority');
+      return $this->belongsTo('App\Priority');
     }
 
 }

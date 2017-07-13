@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class IdeasTableSeeder extends Seeder
 {
@@ -36,6 +37,18 @@ class IdeasTableSeeder extends Seeder
             'content' => 'Take back library books',
             'sort_order' => 10,
             'priority_id' => $meh_id[0]->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        //This is a Meh.
+        DB::table('ideas')->insert([
+            'title' => 'To do soon',
+            'content' => 'Mow the lawn',
+            'sort_order' => 10,
+            'priority_id' => $meh_id[0]->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
 
         // This is a Random.
@@ -44,6 +57,8 @@ class IdeasTableSeeder extends Seeder
             'content' => 'This would be terrifying and cool and have interesting space inside.',
             'sort_order' => 20,
             'priority_id' => $random_id[0]->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
 
         // This is an OMG.
@@ -52,6 +67,8 @@ class IdeasTableSeeder extends Seeder
             'content' => 'Nomnomnom!',
             'sort_order' => 5,
             'priority_id' => $omg_id[0]->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
 
     }
